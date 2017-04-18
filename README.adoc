@@ -1,0 +1,2 @@
+# My Tour of go
+My solutions for Tour of Go exercises
