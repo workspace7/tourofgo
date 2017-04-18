@@ -1,5 +1,6 @@
-package basics
+package basics //import "github.com/workspace7/tourofgo/basics"
 
+//Pic is used to build  the image pixels
 func Pic(dx, dy int) [][]uint8 {
 
 	arr_dy := make([][]uint8, dy)

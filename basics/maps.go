@@ -1,6 +1,8 @@
-package basics
+package basics //import "github.com/workspace7/tourofgo/basics"
 
 import "fmt"
+
+//MapAssign - map assignment
 
 func MapAssign() {
 	var myFamily map[string]Person = make(map[string]Person)

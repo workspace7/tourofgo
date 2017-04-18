@@ -1,44 +1,39 @@
-package methinf
+package methinf // import "github.com/workspace7/tourofgo/methinf"
 
 import (
 	"bytes"
 	"io"
-	"os"
-	"strings"
 )
 
-var ascii_uppercase = []byte("ABCDEFGHIJKLMNOPQRSTUVWXYZ")
-var ascii_lowercase = []byte("abcdefghijklmnopqrstuvwxyz")
+var asciiUppercase = []byte("ABCDEFGHIJKLMNOPQRSTUVWXYZ")
+var asciiLowercase = []byte("abcdefghijklmnopqrstuvwxyz")
 
-const alpa_len = 26
+const lenAlpha = 26
 
-type rot13Reader struct {
-	r io.Reader
+//Rot13Reader reader used to read rot13 bytes
+type Rot13Reader struct {
+	//R the reader
+	R io.Reader
 }
 
-func rot13(b byte) byte {
-	pos := bytes.IndexByte(ascii_uppercase, b)
+//Rot13 return the ROT13 byte
+func Rot13(b byte) byte {
+	pos := bytes.IndexByte(asciiUppercase, b)
 	if pos != -1 {
-		return ascii_uppercase[(pos+13)%alpa_len]
+		return asciiUppercase[(pos+13)%lenAlpha]
 	}
-	pos = bytes.IndexByte(ascii_lowercase, b)
+	pos = bytes.IndexByte(asciiLowercase, b)
 	if pos != -1 {
-		return ascii_lowercase[(pos+13)%alpa_len]
+		return asciiLowercase[(pos+13)%lenAlpha]
 	}
 	return b
 }
 
 //Read read and convert the byte array based on ROT13 algorothm
-func (r rot13Reader) Read(p []byte) (int, error) {
-	n, err := r.r.Read(p)
+func (r Rot13Reader) Read(p []byte) (int, error) {
+	n, err := r.R.Read(p)
 	for i := 0; i < n; i++ {
-		p[i] = rot13(p[i])
+		p[i] = Rot13(p[i])
 	}
 	return n, err
 }
-
-// func main() {
-// 	s := strings.NewReader("Lbh penpxrq gur pbqr!")
-// 	r := rot13Reader{s}
-// 	io.Copy(os.Stdout, &r)
-// }

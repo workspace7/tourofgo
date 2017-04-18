@@ -1,4 +1,4 @@
-package methinf
+package methinf // import "github.com/workspace7/tourofgo/methinf"
 
 import (
 	"fmt"

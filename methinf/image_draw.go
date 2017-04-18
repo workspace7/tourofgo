@@ -1,10 +1,8 @@
-package methinf
+package methinf // import "github.com/workspace7/tourofgo/methinf"
 
 import (
 	"image"
 	"image/color"
-
-	"golang.org/x/tour/pic"
 )
 
 //Image represent the image to be drawn

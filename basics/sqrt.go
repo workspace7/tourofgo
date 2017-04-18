@@ -1,5 +1,6 @@
-package basics
+package basics //import "github.com/workspace7/tourofgo/basics"
 
+//Sqrt - the square root of a float
 func Sqrt(x float64) float64 {
 	z := float64(1)
 

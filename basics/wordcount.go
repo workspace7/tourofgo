@@ -1,7 +1,8 @@
-package basics
+package basics //import "github.com/workspace7/tourofgo/basics"
 
 import "strings"
 
+//WordCount - counts the words in a string
 func WordCount(s string) map[string]int {
 	strs := strings.Fields(s)
 

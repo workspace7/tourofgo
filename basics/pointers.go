@@ -1,7 +1,8 @@
-package basics
+package basics //import "github.com/workspace7/tourofgo/basics"
 
 import "fmt"
 
+//PointersCheck  see how pointers work
 func PointersCheck() {
 	i, j := 10.0, 20.0
 
@@ -13,5 +14,5 @@ func PointersCheck() {
 	*k = *p + *k
 
 	fmt.Printf("p %0.2f is of type %T", *p, p)
-	fmt.Printf("k %0.2f is of type %T", *k)
+	fmt.Printf("k %0.2f is of type %T", *k, k)
 }
